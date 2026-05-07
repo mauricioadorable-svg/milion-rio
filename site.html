@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Transforma o Teu Negócio | Marketing Digital em Angola</title>
+<meta name="description" content="Consultoria e marketing digital premium para empreendedores angolanos. Mais de 3.500 clientes satisfeitos. Resultados reais, estratégias vencedoras." />
+<meta property="og:title" content="Transforma o Teu Negócio | Marketing Digital em Angola" />
+<meta property="og:description" content="Consultoria e marketing digital premium para empreendedores angolanos. Resultados reais." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+  :root{
+    --black:#0a0a0a;
+    --black-2:#111111;
+    --black-3:#050505;
+    --gold:#C9A84C;
+    --gold-light:#F0C040;
+    --gold-dark:#8B6914;
+    --white:#f6f1e3;
+    --muted:#a89a78;
+    --grad-gold:linear-gradient(135deg,#8B6914 0%,#C9A84C 40%,#F0C040 60%,#C9A84C 100%);
+    --trans:.4s ease;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Raleway',sans-serif;
+    background:var(--black);
+    color:var(--white);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.serif{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.5px}
+  a{color:inherit;text-decoration:none;transition:var(--trans)}
+  img{max-width:100%;display:block}
+  section{padding:100px 8%;position:relative}
+  .container{max-width:1300px;margin:0 auto}
+  .gold{color:var(--gold-light)}
+  .text-grad{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ===== NAVBAR ===== */
+  nav.navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    padding:18px 8%;display:flex;align-items:center;justify-content:space-between;
+    background:rgba(10,10,10,.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,.18);transition:var(--trans);
+  }
+  .logo{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700}
+  .logo i{color:var(--gold-light);font-size:1.7rem;filter:drop-shadow(0 0 8px rgba(240,192,64,.5))}
+  .logo span{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;gap:38px;align-items:center;list-style:none}
+  .nav-links a{font-weight:500;font-size:.95rem;letter-spacing:1px;text-transform:uppercase;position:relative;padding:6px 0}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-light);transition:var(--trans)}
+  .nav-links a:hover{color:var(--gold-light)}
+  .nav-links a:hover::after{width:100%}
+  .menu-toggle{display:none;background:none;border:none;color:var(--gold-light);font-size:1.5rem;cursor:pointer}
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float{
+    position:fixed;bottom:30px;right:30px;width:64px;height:64px;border-radius:50%;
+    background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:2rem;z-index:999;box-shadow:0 10px 30px rgba(37,211,102,.45);
+  }
+  .wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.6;animation:pulse 2s infinite;z-index:-1}
+  @keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;padding-top:140px;display:flex;flex-direction:column;justify-content:center;
+    position:relative;overflow:hidden;
+    background:linear-gradient(rgba(10,10,10,.78),rgba(10,10,10,.92)),url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  }
+  #particles{position:absolute;inset:0;pointer-events:none}
+  .hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;text-align:center}
+  .hero h1{font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.1;margin-bottom:24px;min-height:3.2em}
+  .hero h1 .cursor{display:inline-block;width:4px;background:var(--gold-light);margin-left:4px;animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hero .subtitle{font-size:clamp(1rem,1.5vw,1.25rem);color:#d6cdb4;max-width:780px;margin:0 auto 28px}
+  .urgency{
+    display:inline-block;padding:14px 26px;margin:10px auto 36px;
+    border:1px solid var(--gold);border-radius:50px;
+    background:rgba(201,168,76,.08);color:var(--gold-light);font-weight:500;
+    font-size:1rem;letter-spacing:.5px;
+  }
+  .cta-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:16px 34px;border-radius:50px;
+    font-family:'Raleway',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:1.2px;
+    text-transform:uppercase;cursor:pointer;border:none;transition:var(--trans);position:relative;overflow:hidden;
+  }
+  .btn-gold{background:var(--grad-gold);color:#0a0a0a;box-shadow:0 8px 25px rgba(201,168,76,.35)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(240,192,64,.55),0 0 0 1px var(--gold-light)}
+  .btn-outline{background:transparent;color:var(--gold-light);border:1.5px solid var(--gold)}
+  .btn-outline:hover{background:rgba(201,168,76,.12);box-shadow:0 0 25px rgba(240,192,64,.35)}
+  .stats{display:flex;gap:50px;justify-content:center;flex-wrap:wrap;padding:30px;border-top:1px solid rgba(201,168,76,.2);border-bottom:1px solid rgba(201,168,76,.2)}
+  .stat{text-align:center}
+  .stat .num{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--gold-light);font-weight:700;display:block}
+  .stat .lbl{font-size:.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+  /* ===== SECTION TITLES ===== */
+  .section-title{text-align:center;margin-bottom:70px}
+  .section-title .eyebrow{display:inline-block;font-size:.85rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .section-title h2{font-size:clamp(2rem,3.5vw,3.2rem);margin-bottom:18px}
+  .section-title h2 .text-grad{display:inline-block}
+  .section-title .line{width:80px;height:2px;background:var(--grad-gold);margin:0 auto}
+
+  /* ===== VSL ===== */
+  .vsl{margin:80px auto 0;max-width:900px}
+  .vsl-box{
+    border:2px solid var(--gold);border-radius:20px;padding:60px 40px;text-align:center;
+    background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(0,0,0,.6));
+    position:relative;overflow:hidden;
+  }
+  .vsl-box::before{content:'';position:absolute;inset:-2px;border-radius:20px;background:var(--grad-gold);z-index:-1;opacity:.3;filter:blur(20px)}
+  .vsl-thumb{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;margin-bottom:30px;border:1px solid rgba(240,192,64,.3)}
+  .vsl-thumb img{width:100%;height:auto;display:block;transition:var(--trans);filter:brightness(.65)}
+  .vsl-thumb:hover img{transform:scale(1.04);filter:brightness(.8)}
+  .vsl-play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:90px;height:90px;border-radius:50%;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;
+    color:#000;font-size:2rem;cursor:pointer;box-shadow:0 0 0 0 rgba(240,192,64,.6);animation:pulseRing 2s infinite;
+  }
+  @keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(240,192,64,.6)}70%{box-shadow:0 0 0 25px rgba(240,192,64,0)}100%{box-shadow:0 0 0 0 rgba(240,192,64,0)}}
+  .vsl-box h3{font-size:clamp(1.3rem,2.2vw,1.9rem);margin-bottom:18px;color:var(--white)}
+  .vsl-box p{color:#c8bf9f;max-width:680px;margin:0 auto 30px}
+
+  /* ===== VSL MODAL ===== */
+  .vsl-modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+  .vsl-modal.open{display:flex;animation:fadeIn .3s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .vsl-modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px)}
+  .vsl-modal-content{position:relative;width:100%;max-width:1000px;z-index:1}
+  .vsl-modal-close{position:absolute;top:-50px;right:0;background:transparent;border:1px solid var(--gold);color:var(--gold-light);width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--trans)}
+  .vsl-modal-close:hover{background:var(--gold-light);color:#000}
+  .vsl-modal-video{position:relative;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 60px rgba(240,192,64,.3)}
+  .vsl-modal-video iframe{position:absolute;inset:0;width:100%;height:100%}
+  .field .err{color:#ff6b6b;font-size:.82rem;margin-top:6px;display:none}
+  .field.invalid .err{display:block}
+  .field.invalid input,.field.invalid textarea{border-color:#ff6b6b}
+  .form-success{display:none;padding:18px;border-radius:10px;background:rgba(46,160,67,.15);border:1px solid #2ea043;color:#7ee08a;text-align:center;margin-bottom:18px}
+  .form-success.show{display:block;animation:fadeIn .4s ease}
+
+  /* ===== TESTIMONIAL FEATURED ===== */
+  .ruyter{
+    margin:80px auto 0;max-width:1000px;padding:60px 50px;border-radius:20px;
+    background:linear-gradient(135deg,rgba(139,105,20,.25) 0%,rgba(10,10,10,.9) 100%);
+    border:1px solid rgba(240,192,64,.3);position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(201,168,76,.15);
+  }
+  .ruyter .quote{font-family:'Playfair Display',serif;font-size:80px;line-height:.6;color:var(--gold-light);position:absolute;top:30px;left:30px;opacity:.6}
+  .ruyter-grid{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center}
+  .ruyter img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:3px solid var(--gold-light);box-shadow:0 0 30px rgba(240,192,64,.3)}
+  .ruyter blockquote{font-size:1.15rem;font-style:italic;color:#e8e0c5;margin-bottom:20px;line-height:1.8}
+  .ruyter .who{display:flex;flex-direction:column;gap:4px}
+  .ruyter .who strong{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold-light)}
+  .ruyter .who span{color:var(--muted);font-size:.9rem;letter-spacing:1px}
+  .stars{color:var(--gold-light);letter-spacing:3px;margin-top:6px}
+
+  /* ===== TESTIMONIAL GRID ===== */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:80px}
+  .testi-card{
+    background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+    border:1px solid rgba(201,168,76,.18);border-bottom:3px solid var(--gold);
+    border-radius:14px;padding:35px 30px;transition:var(--trans);
+  }
+  .testi-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:var(--gold-light)}
+  .testi-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .testi-head img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+  .testi-head h4{font-size:1.1rem;color:var(--white);margin-bottom:2px}
+  .testi-head span{font-size:.82rem;color:var(--muted)}
+  .testi-card p{color:#cdc4a8;font-size:.95rem;font-style:italic;margin-bottom:14px}
+
+  /* ===== ABOUT ===== */
+  .about-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+  .about-row.reverse{direction:rtl}
+  .about-row.reverse > *{direction:ltr}
+  .about-row img{border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.5);border:1px solid rgba(201,168,76,.25)}
+  .about-row h3{font-size:2rem;margin-bottom:18px;color:var(--gold-light)}
+  .about-row p{color:#c8bf9f;font-size:1rem}
+
+  /* ===== VALUES ===== */
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:80px}
+  .value-card{
+    text-align:center;padding:45px 30px;border-radius:14px;
+    background:linear-gradient(180deg,rgba(201,168,76,.08),rgba(10,10,10,.5));
+    border:1px solid rgba(201,168,76,.2);transition:var(--trans);
+  }
+  .value-card:hover{transform:translateY(-8px);border-color:var(--gold-light);box-shadow:0 0 40px rgba(201,168,76,.2)}
+  .value-icon{
+    width:80px;height:80px;border-radius:50%;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 22px;color:#000;font-size:2rem;
+  }
+  .value-card h4{font-size:1.4rem;margin-bottom:14px;color:var(--gold-light);letter-spacing:3px}
+  .value-card p{color:#c8bf9f;font-size:.95rem}
+
+  /* ===== SERVICES ===== */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
+  .service{
+    position:relative;border-radius:14px;overflow:hidden;cursor:pointer;
+    border:1px solid rgba(201,168,76,.2);background:#111;
+  }
+  .service img{height:240px;width:100%;object-fit:cover;transition:var(--trans)}
+  .service:hover img{transform:scale(1.08)}
+  .service-body{padding:24px;background:#0e0e0e}
+  .service-body h4{font-size:1.2rem;color:var(--gold-light);margin-bottom:8px}
+  .service-body p{color:#bdb398;font-size:.92rem}
+  .service-overlay{
+    position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,105,20,.85),rgba(10,10,10,.8));
+    display:flex;align-items:center;justify-content:center;opacity:0;transition:var(--trans);
+  }
+  .service:hover .service-overlay{opacity:1}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
+  form{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));padding:40px;border-radius:14px;border:1px solid rgba(201,168,76,.2)}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .field input,.field textarea{
+    width:100%;padding:14px 18px;background:rgba(0,0,0,.5);border:1px solid rgba(201,168,76,.3);
+    border-radius:8px;color:var(--white);font-family:inherit;font-size:1rem;transition:var(--trans);
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold-light);box-shadow:0 0 0 3px rgba(240,192,64,.15)}
+  .field textarea{min-height:140px;resize:vertical}
+  .contact-info{display:flex;flex-direction:column;gap:24px}
+  .info-block{padding:28px;border:1px solid rgba(201,168,76,.2);border-radius:14px;background:rgba(255,255,255,.02)}
+  .info-block h4{font-family:'Playfair Display',serif;color:var(--gold-light);margin-bottom:12px;font-size:1.3rem}
+  .info-block a{color:#d6cdb4;display:inline-flex;align-items:center;gap:10px}
+  .info-block a:hover{color:var(--gold-light)}
+  .wa-big{
+    display:flex;align-items:center;gap:16px;padding:20px 26px;background:#25D366;color:#fff;border-radius:12px;
+    font-weight:600;letter-spacing:1px;
+  }
+  .wa-big i{font-size:1.8rem}
+  .socials{display:flex;gap:16px;margin-top:6px}
+  .socials a{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:1.1rem}
+  .socials a:hover{background:var(--gold-light);color:#000}
+  .motivational{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:1.2rem;text-align:center;padding:20px}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--black-3);padding:70px 8% 30px;position:relative;border-top:2px solid;border-image:var(--grad-gold) 1;overflow:hidden}
+  #footParticles{position:absolute;inset:0;pointer-events:none;opacity:.5}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;position:relative;z-index:1}
+  .foot-grid h5{font-family:'Playfair Display',serif;color:var(--gold-light);font-size:1.2rem;margin-bottom:18px}
+  .foot-grid p,.foot-grid a{color:#9d957a;font-size:.9rem;line-height:2}
+  .foot-grid a:hover{color:var(--gold-light)}
+  .foot-grid ul{list-style:none}
+  .copyright{
+    text-align:center;margin-top:50px;padding-top:25px;border-top:1px solid rgba(201,168,76,.15);
+    color:#7d7560;font-size:.85rem;position:relative;z-index:1;
+  }
+  .copyright .gold{color:var(--gold-light)}
+
+  /* ===== ANIMATIONS ===== */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:1200px){
+    .testi-grid,.values,.services{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:768px){
+    section{padding:70px 5%}
+    nav.navbar{padding:14px 5%}
+    .menu-toggle{display:block}
+    .nav-links{
+      position:absolute;top:100%;right:0;background:rgba(10,10,10,.95);backdrop-filter:blur(15px);
+      flex-direction:column;width:240px;padding:25px;gap:18px;border-left:1px solid var(--gold);
+      transform:translateX(100%);transition:var(--trans);
+    }
+    .nav-links.open{transform:translateX(0)}
+    .stats{gap:25px;padding:20px}
+    .stat .num{font-size:2rem}
+    .ruyter{padding:50px 25px}
+    .ruyter-grid{grid-template-columns:1fr;text-align:center}
+    .ruyter img{margin:0 auto}
+    .testi-grid,.values,.services,.about-row,.contact-grid,.foot-grid{grid-template-columns:1fr;gap:30px}
+    .about-row.reverse{direction:ltr}
+    .wa-float{width:54px;height:54px;font-size:1.5rem;bottom:20px;right:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#inicio" class="logo">
+    <i class="fa-solid fa-crown"></i>
+    <span>Áureo Digital</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre Nós</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+</nav>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/244923000000?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20vossos%20serviços." target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ===== INÍCIO ===== -->
+<section class="hero" id="inicio">
+  <canvas id="particles"></canvas>
+  <div class="hero-content">
+    <h1><span id="typed"></span><span class="cursor">&nbsp;</span></h1>
+    <p class="subtitle">Mais de 3.500 empreendedores angolanos já alcançaram resultados extraordinários connosco. Chegou a tua vez.</p>
+    <div class="urgency">⚡ Queres sair da matrix? Não percas mais tempo — cada dia sem estratégia é dinheiro a escapar das tuas mãos.</div>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#contacto">Começar Agora <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="btn btn-outline" href="https://wa.me/244923000000?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20vossos%20serviços." target="_blank"><i class="fa-brands fa-whatsapp"></i> Falar pelo WhatsApp</a>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><span class="num" data-count="3500">0</span><span class="lbl">Empreendedores</span></div>
+      <div class="stat"><span class="num" data-count="98" data-suffix="%">0</span><span class="lbl">Satisfação</span></div>
+      <div class="stat"><span class="num" data-count="5" data-suffix=" Anos">0</span><span class="lbl">Experiência</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VSL -->
+<section style="padding-top:40px">
+  <div class="container vsl reveal">
+    <div class="vsl-box">
+      <div class="vsl-thumb" id="vslOpen" role="button" tabindex="0" aria-label="Abrir vídeo">
+        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=1200&q=80" alt="VSL Thumbnail" loading="lazy"/>
+        <div class="vsl-play"><i class="fa-solid fa-play"></i></div>
+      </div>
+      <h3>VÍDEO: Descobre Quanto Dinheiro Estás a Perder Por Não Teres Uma Estratégia Digital</h3>
+      <p>Sem visibilidade online, cada mês que passa representa clientes que foram para a concorrência, vendas que nunca aconteceram e sonhos que ficaram no papel. Este vídeo mostra, em números reais, o impacto de não agir — e o que muda quando tens a equipa certa ao teu lado.</p>
+      <button class="btn btn-gold" id="vslOpenBtn"><i class="fa-solid fa-play"></i> Assistir Agora</button>
+    </div>
+  </div>
+</section>
+
+<!-- VSL MODAL -->
+<div class="vsl-modal" id="vslModal" aria-hidden="true">
+  <div class="vsl-modal-overlay" data-close></div>
+  <div class="vsl-modal-content" role="dialog" aria-modal="true" aria-label="Vídeo">
+    <button class="vsl-modal-close" data-close aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    <div class="vsl-modal-video">
+      <iframe id="vslIframe" src="" title="Vídeo de Vendas" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- RUYTER -->
+<section style="padding-top:40px">
+  <div class="container ruyter reveal">
+    <span class="quote">“</span>
+    <div class="ruyter-grid">
+      <img src="https://i.pravatar.cc/300?img=68" alt="Ruyter" loading="lazy" />
+      <div>
+        <blockquote>«Trabalhar com esta empresa foi um divisor de águas no meu percurso empresarial. Num dos meus projectos mais ambiciosos, eles desenvolveram toda a estratégia digital e os resultados foram absolutamente incríveis — superámos as metas em 300% no primeiro trimestre. Recomendo sem hesitar a qualquer empreendedor que queira resultados reais.»</blockquote>
+        <div class="who">
+          <strong>Ruyter</strong>
+          <span>Empresário & Investidor</span>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Provas Reais</div>
+      <h2>O Que Dizem <span class="text-grad">os Nossos Clientes</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=12" loading="lazy" alt="Eduardo Lopes"/>
+          <div><h4>Eduardo Lopes</h4><span>Dono de restaurante em Luanda</span></div>
+        </div>
+        <p>"Triplicámos as reservas em 4 meses. A estratégia de redes sociais trouxe-nos um público que nunca pensei alcançar. Profissionalismo absoluto."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=47" loading="lazy" alt="Margarida Neto"/>
+          <div><h4>Margarida Neto</h4><span>Empreendedora na área de moda</span></div>
+        </div>
+        <p>"A minha marca passou de desconhecida a referência. O branding criado pela equipa elevou tudo — desde o logótipo até à forma como falamos com clientes."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=33" loading="lazy" alt="António Ferreira"/>
+          <div><h4>António Ferreira</h4><span>CEO de empresa de logística</span></div>
+        </div>
+        <p>"Os anúncios pagos geridos por eles deram-nos um ROI 5x superior ao que tínhamos antes. Sabem exactamente o que fazem e onde investir."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=45" loading="lazy" alt="Beatriz Kahango"/>
+          <div><h4>Beatriz Kahango</h4><span>Fundadora de salão de beleza</span></div>
+        </div>
+        <p>"Com a consultoria entendi finalmente o meu cliente ideal. Hoje tenho agenda lotada e uma equipa nova só por causa do crescimento."</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=53" loading="lazy" alt="Simão Vieira"/>
+          <div><h4>Simão Vieira</h4><span>Importador & comerciante</span></div>
+        </div>
+        <p>"Pensei que marketing digital era para grandes empresas. Mostraram-me o contrário — e em 6 meses dupliquei as vendas online."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-head">
+          <img src="https://i.pravatar.cc/200?img=44" loading="lazy" alt="Joana Mateus"/>
+          <div><h4>Joana Mateus</h4><span>Coach & Mentora</span></div>
+        </div>
+        <p>"Atendimento de altíssimo nível, do primeiro contacto à entrega. Sinto que a minha marca pessoal foi tratada com o cuidado que merecia."</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" style="background:linear-gradient(180deg,#0a0a0a,#111111)">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Quem Somos</div>
+      <h2>A <span class="text-grad">Áureo Digital</span></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="about-row reveal">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" loading="lazy" alt="Equipa"/>
+      <div>
+        <h3>A Nossa História</h3>
+        <p>Nascemos em Luanda com uma missão clara: democratizar o acesso a estratégias de marketing digital de nível internacional para o empreendedor angolano. Começámos pequenos, com poucos clientes mas com uma convicção enorme — a de que talento, tecnologia e dedicação podiam transformar negócios locais em referências de mercado. Hoje, depois de mais de cinco anos a operar em Angola, somos um colectivo de estrategas, designers, copywriters e gestores de tráfego que partilham uma única ambição: ver os nossos clientes vencer. A nossa visão de futuro é tornar Angola num hub continental de inovação digital, e cada projecto que abraçamos é uma peça nesse puzzle maior.</p>
+      </div>
+    </div>
+
+    <div class="about-row reverse reveal">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" loading="lazy" alt="Como trabalhamos"/>
+      <div>
+        <h3>Como Trabalhamos</h3>
+        <p>Começamos sempre por ouvir. Um diagnóstico profundo do teu negócio, do teu mercado, dos teus concorrentes e — sobretudo — do teu cliente ideal. A partir daí construímos uma estratégia personalizada, com objectivos mensuráveis e prazos realistas. Usamos as ferramentas mais avançadas do mercado (Meta Business Suite, Google Ads, ferramentas de SEO premium, automação de e-mail, CRM) e combinamo-las com criatividade humana e copy persuasivo. Reuniões semanais, relatórios transparentes, ajustes em tempo real. O nosso compromisso não é com vaidade — é com facturação, leads qualificados e crescimento sustentado.</p>
+      </div>
+    </div>
+
+    <div class="about-row reveal">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" loading="lazy" alt="Diferenciais"/>
+      <div>
+        <h3>Por Que Somos Diferentes</h3>
+        <p>Em Angola, muito se promete e pouco se entrega. Nós invertemos essa lógica: prometemos pouco e entregamos muito. Já ajudámos restaurantes a triplicar facturação em três meses, marcas de moda a esgotar colecções no primeiro fim-de-semana, consultórios a multiplicar agendamentos por dez. Não somos uma agência genérica que aplica o mesmo molde a todos os clientes — somos parceiros estratégicos que mergulham fundo em cada negócio. O nosso conhecimento profundo do mercado angolano, combinado com práticas internacionais de ponta, é o que nos torna únicos. E acima de tudo: tratamos cada cliente como se fosse o único.</p>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="values">
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h4>MISSÃO</h4>
+        <p>Ajudar novos empreendedores a atingir o sucesso profissional, fornecendo as ferramentas, estratégias e acompanhamento necessários para que cada negócio atinja o seu máximo potencial.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-fire"></i></div>
+        <h4>DEDICAÇÃO</h4>
+        <p>Trabalhamos incansavelmente até ultrapassar o objectivo do cliente — não nos contentamos com o suficiente quando o extraordinário é possível.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><i class="fa-solid fa-crown"></i></div>
+        <h4>PRIORIDADE</h4>
+        <p>A vontade e o sucesso do cliente são a nossa bússola. Cada decisão, cada estratégia, cada acção existe para servir os seus resultados.</p>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="section-title reveal" style="margin-top:120px">
+      <div class="eyebrow">O Que Oferecemos</div>
+      <h2>Nossos <span class="text-grad">Serviços</span></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="services">
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Gestão de Redes Sociais</h4><p>Conteúdo estratégico e diário em Instagram, Facebook e TikTok que constrói autoridade e gera vendas.</p></div>
+      </div>
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Criação de Conteúdo</h4><p>Foto, vídeo, reels e copy persuasivo produzidos para destacar a tua marca em qualquer feed.</p></div>
+      </div>
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Publicidade Paga (Meta Ads)</h4><p>Campanhas optimizadas em Facebook, Instagram e Google que entregam ROI mensurável.</p></div>
+      </div>
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Branding & Identidade Visual</h4><p>Construímos marcas memoráveis com logótipo, paleta, tom de voz e manual completo.</p></div>
+      </div>
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Estratégia de Vendas Online</h4><p>Funis de venda, e-commerce e automações que transformam tráfego em facturação real.</p></div>
+      </div>
+      <div class="service reveal">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80" loading="lazy" alt=""/>
+        <div class="service-overlay"><a class="btn btn-gold" href="#contacto">Saber Mais</a></div>
+        <div class="service-body"><h4>Consultoria para Empreendedores</h4><p>Mentoria 1-a-1 para clarificar visão, posicionamento e plano de crescimento sustentado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
+  <div class="container">
+    <div class="section-title reveal">
+      <div class="eyebrow">Vamos Conversar</div>
+      <h2>Entra em <span class="text-grad">Contacto</span></h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <form id="contactForm" class="reveal" novalidate>
+        <div class="form-success" id="formSuccess"><i class="fa-solid fa-circle-check gold"></i> Mensagem pronta! O teu cliente de email vai abrir agora.</div>
+        <div class="field"><label>Nome completo</label><input type="text" name="nome" maxlength="100" placeholder="O teu nome"/><div class="err">Por favor, indica o teu nome (mínimo 2 caracteres).</div></div>
+        <div class="field"><label>Email</label><input type="email" name="email" maxlength="255" placeholder="email@exemplo.com"/><div class="err">Indica um endereço de email válido.</div></div>
+        <div class="field"><label>Assunto</label><input type="text" name="assunto" maxlength="120" placeholder="Sobre o que queres falar?"/><div class="err">Indica o assunto (mínimo 3 caracteres).</div></div>
+        <div class="field"><label>Mensagem</label><textarea name="mensagem" maxlength="1000" placeholder="Conta-nos sobre o teu projecto..."></textarea><div class="err">Escreve uma mensagem (mínimo 10 caracteres).</div></div>
+        <button type="submit" class="btn btn-gold" style="width:100%">Enviar Mensagem <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+
+      <div class="contact-info reveal">
+        <a class="wa-big" href="https://wa.me/244923000000?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20vossos%20serviços." target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <div>
+            <div style="font-size:.8rem;opacity:.85;letter-spacing:1px">WHATSAPP DIRECTO</div>
+            <div>+244 923 000 000</div>
+          </div>
+        </a>
+
+        <div class="info-block">
+          <h4>Redes Sociais</h4>
+          <div class="socials">
+            <a href="https://facebook.com/aureodigital" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/aureodigital" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:mauricioadorable@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h4>Localização</h4>
+          <p style="color:#c8bf9f"><i class="fa-solid fa-location-dot gold"></i> Luanda, Angola</p>
+          <p style="color:#c8bf9f"><i class="fa-solid fa-envelope gold"></i> mauricioadorable@gmail.com</p>
+        </div>
+
+        <div class="motivational">"Estamos a um clique de transformar o teu negócio."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <canvas id="footParticles"></canvas>
+  <div class="foot-grid">
+    <div>
+      <div class="logo" style="margin-bottom:14px"><i class="fa-solid fa-crown"></i><span>Áureo Digital</span></div>
+      <p style="font-style:italic;color:var(--gold-light);margin-bottom:10px">"Onde o teu negócio encontra o seu brilho."</p>
+      <p>Consultoria e marketing digital premium para empreendedores angolanos que se recusam a ser medianos. Estratégia, criatividade e resultados — tudo num só lugar.</p>
+    </div>
+    <div>
+      <h5>Links Rápidos</h5>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="socials" style="margin-top:14px">
+        <a href="https://facebook.com/aureodigital" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/aureodigital" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/244923000000" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h5>Contacto</h5>
+      <p><i class="fa-solid fa-envelope gold"></i> mauricioadorable@gmail.com</p>
+      <p><i class="fa-brands fa-whatsapp gold"></i> +244 923 000 000</p>
+      <p><i class="fa-solid fa-location-dot gold"></i> Luanda, Angola</p>
+    </div>
+  </div>
+  <div class="copyright">© 2025 <span class="gold">Áureo Digital</span>. Todos os direitos reservados. | Feito com <span class="gold">♦</span> em Angola</div>
+</footer>
+
+<script>
+  // ====== TYPEWRITER ======
+  const phrase = "Transforma o Teu Negócio. Domina o Mercado. Vive o Teu Sucesso.";
+  const target = document.getElementById('typed');
+  let i = 0;
+  function type(){
+    if(i <= phrase.length){
+      target.textContent = phrase.slice(0,i);
+      i++;
+      setTimeout(type, 55);
+    }
+  }
+  setTimeout(type, 400);
+
+  // ====== PARTICLES ======
+  function initParticles(canvasId, count, opacity){
+    const canvas = document.getElementById(canvasId);
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    function resize(){canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight}
+    resize(); window.addEventListener('resize', resize);
+    const parts = Array.from({length:count}, () => ({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      r:Math.random()*2+0.5,
+      vx:(Math.random()-0.5)*0.3,
+      vy:-(Math.random()*0.4+0.1),
+      a:Math.random()*opacity
+    }));
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      parts.forEach(p=>{
+        ctx.beginPath();
+        ctx.fillStyle=`rgba(240,192,64,${p.a})`;
+        ctx.shadowColor='rgba(240,192,64,.8)';
+        ctx.shadowBlur=8;
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.y<0){p.y=canvas.height; p.x=Math.random()*canvas.width}
+        if(p.x<0||p.x>canvas.width) p.vx*=-1;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+  initParticles('particles', 70, 0.8);
+  initParticles('footParticles', 30, 0.5);
+
+  // ====== SCROLL REVEAL ======
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        if(e.target.classList.contains('stats')) animateCounters();
+      }
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  // ====== COUNTERS ======
+  let countersDone = false;
+  function animateCounters(){
+    if(countersDone) return; countersDone = true;
+    document.querySelectorAll('.num').forEach(el=>{
+      const target = +el.dataset.count;
+      const suffix = el.dataset.suffix || (target>=1000?'+':'');
+      let cur = 0; const step = Math.max(1, target/60);
+      const t = setInterval(()=>{
+        cur+=step;
+        if(cur>=target){cur=target; clearInterval(t)}
+        el.textContent = Math.floor(cur).toLocaleString('pt-PT')+suffix;
+      },25);
+    });
+  }
+
+  // ====== MOBILE MENU ======
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', ()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  // ====== NAVBAR SHADOW ON SCROLL ======
+  window.addEventListener('scroll',()=>{
+    document.querySelector('.navbar').style.background = window.scrollY>50 ? 'rgba(5,5,5,.85)' : 'rgba(10,10,10,.65)';
+  });
+
+  // ====== VSL MODAL ======
+  const VSL_VIDEO_ID = 'dQw4w9WgXcQ'; // troca pelo ID real do vídeo do YouTube
+  const modal = document.getElementById('vslModal');
+  const iframe = document.getElementById('vslIframe');
+  function openVSL(){
+    iframe.src = `https://www.youtube.com/embed/${VSL_VIDEO_ID}?autoplay=1&rel=0`;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeVSL(){
+    iframe.src = '';
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  document.getElementById('vslOpen').addEventListener('click', openVSL);
+  document.getElementById('vslOpen').addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' ') openVSL(); });
+  document.getElementById('vslOpenBtn').addEventListener('click', openVSL);
+  modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click', closeVSL));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) closeVSL(); });
+
+  // ====== FORM VALIDATION ======
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function validateField(input){
+    const field = input.closest('.field');
+    const v = input.value.trim();
+    let ok = true;
+    if(input.name==='nome') ok = v.length>=2 && v.length<=100;
+    else if(input.name==='email') ok = emailRe.test(v) && v.length<=255;
+    else if(input.name==='assunto') ok = v.length>=3 && v.length<=120;
+    else if(input.name==='mensagem') ok = v.length>=10 && v.length<=1000;
+    field.classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  form.querySelectorAll('input,textarea').forEach(el=>{
+    el.addEventListener('blur', ()=>validateField(el));
+    el.addEventListener('input', ()=>{ if(el.closest('.field').classList.contains('invalid')) validateField(el); });
+  });
+
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    let allOk = true;
+    form.querySelectorAll('input,textarea').forEach(el=>{ if(!validateField(el)) allOk=false; });
+    if(!allOk){
+      const firstInvalid = form.querySelector('.field.invalid input, .field.invalid textarea');
+      if(firstInvalid) firstInvalid.focus();
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form));
+    const subject = encodeURIComponent(`[Site] ${data.assunto}`);
+    const body = encodeURIComponent(`Nome: ${data.nome}\nEmail: ${data.email}\n\n${data.mensagem}`);
+    success.classList.add('show');
+    window.location.href = `mailto:mauricioadorable@gmail.com?subject=${subject}&body=${body}`;
+    setTimeout(()=>{ form.reset(); success.classList.remove('show'); }, 5000);
+  });
+</script>
+</body>
+</html>
